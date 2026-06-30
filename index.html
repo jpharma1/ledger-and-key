@@ -412,6 +412,18 @@
   .path-card h3 { font-size: 24px; margin-bottom: 12px; }
   .path-card p { font-size: 15.5px; color: var(--navy-soft); margin-bottom: 28px; }
 
+  .faq { }
+  .faq-list { border-top: 1px solid var(--line); }
+  .faq-item { display: grid; grid-template-columns: 1fr 1.8fr; gap: 40px; padding: 32px 0; border-bottom: 1px solid var(--line); align-items: start; }
+  .faq-q { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; line-height: 1.3; }
+  .faq-a { font-size: 15.5px; color: var(--navy-soft); line-height: 1.7; }
+
+  .close-band { background: var(--navy); color: var(--ivory); text-align: center; }
+  .close-band h2 { color: var(--ivory); font-size: clamp(26px, 3.2vw, 38px); max-width: 700px; margin: 0 auto 16px; line-height: 1.2; }
+  .close-band p { color: rgba(247,242,233,0.7); font-size: 17px; max-width: 540px; margin: 0 auto 36px; }
+  .close-band .btn-primary { background: var(--brass); color: var(--ivory); }
+  .close-band .btn-primary:hover { background: var(--brass-light); }
+
   @media (max-width: 860px) {
     .nav-links { display: none; }
     .hero { padding: 64px 24px 64px; }
@@ -424,6 +436,7 @@
     .cta-band-inner { flex-direction: column; align-items: flex-start; }
     .testimonial-grid { grid-template-columns: 1fr; }
     .path-grid { grid-template-columns: 1fr; }
+    .faq-item { grid-template-columns: 1fr; gap: 12px; }
     section { padding: 64px 0; }
   }
 
@@ -643,13 +656,45 @@
   </div>
 </section>
 
-<section class="cta-band">
-  <div class="wrap cta-band-inner">
-    <h2>Ready to see what's out there?</h2>
-    <div class="cta-band-actions">
-      <a href="loan-officers.html#apply" class="btn btn-primary">Submit Your Resume →</a>
-      <a href="contact.html" class="btn btn-secondary">Talk to a Recruiter</a>
+<section class="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">
+        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        Common Questions
+      </div>
+      <h2>What people ask before reaching out.</h2>
     </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is this confidential?</div>
+        <div class="faq-a">Completely. We never contact your current employer, and we never submit your information to any lender without your explicit approval — role by role, every time. Your search stays private until you say otherwise.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does this cost me as a candidate?</div>
+        <div class="faq-a">Nothing. Our fee is paid entirely by the employer once a placement is made. You pay zero — before, during, and after the process.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need to be actively looking to reach out?</div>
+        <div class="faq-a">No. Many of our best placements start as "just curious" conversations. If the right opportunity comes up that genuinely improves your situation, we'll bring it to you. If not, there's no pressure and nothing owed.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How quickly does this typically move?</div>
+        <div class="faq-a">We review every submission within 48 hours and aim to have qualified candidates in front of the right employers within a week of intake. From first conversation to signed offer varies — but we don't let it drag, and we stay in contact the whole way through.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What states are you actively placing in right now?</div>
+        <div class="faq-a">We're currently filling Branch Manager and Senior Loan Officer roles in AL, AZ, AR, CO, FL, GA, IL, KY, ME, TN, TX, and WI. If you're not in one of those states, reach out anyway — our employer network spans more than our current open listings.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close-band">
+  <div class="wrap" style="padding-top: 96px; padding-bottom: 96px;">
+    <h2>The producers winning right now aren't waiting for perfect conditions — they're moving to the shop that creates them.</h2>
+    <p>One conversation. No pressure. We'll tell you what's out there and whether it's worth your time.</p>
+    <a href="loan-officers.html#apply" class="btn btn-primary">Submit Your Resume →</a>
   </div>
 </section>
 
