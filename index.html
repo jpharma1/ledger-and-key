@@ -399,6 +399,19 @@
     gap: 12px;
   }
 
+  .testimonials { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .testimonial-card { background: var(--ivory); padding: 40px 36px; display: flex; flex-direction: column; }
+  .quote-mark { font-family: 'Source Serif 4', serif; font-size: 56px; color: var(--brass-light); line-height: 0.85; margin-bottom: 16px; }
+  .testimonial-text { font-family: 'Source Serif 4', serif; font-size: 16.5px; line-height: 1.65; color: var(--navy); margin-bottom: 24px; flex: 1; }
+  .testimonial-source { font-size: 13px; font-weight: 600; color: var(--stone); padding-top: 16px; border-top: 1px solid var(--line); }
+
+  .paths { background: var(--ivory-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .path-card { background: var(--white); padding: 48px 44px; }
+  .path-card h3 { font-size: 24px; margin-bottom: 12px; }
+  .path-card p { font-size: 15.5px; color: var(--navy-soft); margin-bottom: 28px; }
+
   @media (max-width: 860px) {
     .nav-links { display: none; }
     .hero { padding: 64px 24px 64px; }
@@ -409,6 +422,8 @@
     .role-row { grid-template-columns: 1fr; gap: 10px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .cta-band-inner { flex-direction: column; align-items: flex-start; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .path-grid { grid-template-columns: 1fr; }
     section { padding: 64px 0; }
   }
 
@@ -483,26 +498,20 @@
     </div>
 
     <div class="role-row">
+      <div class="role-title">Branch Manager</div>
+      <div class="role-meta">AL, AZ, AR, CO, FL, GA, IL, KY, ME, TN, TX, WI · Mortgage</div>
+      <div class="role-tag">Leadership</div>
+      <a href="loan-officers.html#apply" class="role-link">Apply →</a>
+    </div>
+    <div class="role-row">
       <div class="role-title">Senior Loan Officer</div>
-      <div class="role-meta">South Florida · Retail branch</div>
+      <div class="role-meta">AL, AZ, AR, CO, FL, GA, IL, KY, ME, TN, TX, WI · Mortgage</div>
       <div class="role-tag">High volume</div>
       <a href="loan-officers.html#apply" class="role-link">Apply →</a>
     </div>
     <div class="role-row">
       <div class="role-title">Mortgage Loan Processor</div>
       <div class="role-meta">Remote · Multi-state</div>
-      <div class="role-tag">Remote OK</div>
-      <a href="loan-officers.html#apply" class="role-link">Apply →</a>
-    </div>
-    <div class="role-row">
-      <div class="role-title">Real Estate Agent, Buyer's Team</div>
-      <div class="role-meta">South Florida · Team placement</div>
-      <div class="role-tag">Team lead track</div>
-      <a href="loan-officers.html#apply" class="role-link">Apply →</a>
-    </div>
-    <div class="role-row">
-      <div class="role-title">FHA / DE Underwriter</div>
-      <div class="role-meta">Remote · Direct lender</div>
       <div class="role-tag">Remote OK</div>
       <a href="loan-officers.html#apply" class="role-link">Apply →</a>
     </div>
@@ -535,6 +544,60 @@
         <div class="how-mark"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#1B2A41" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#1B2A41" stroke-width="1.6" stroke-linecap="round"/></svg></div>
         <h3>You negotiate from strength</h3>
         <p>We brief you on comp structure, splits, and lead programs at each shop before you ever take a call, so you walk in knowing what's actually on the table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="wrap" style="padding-top: 96px; padding-bottom: 96px;">
+    <div class="section-head">
+      <div class="section-eyebrow">
+        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        What Producers Say
+      </div>
+      <h2>From the people we've placed.</h2>
+      <p>A move is only as good as where it actually takes you.</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">Joe didn't blast my resume everywhere. He came back with two shops that actually matched my volume — and I was at the better one within six weeks.</p>
+        <div class="testimonial-source">Senior Loan Officer · South Florida</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">I knew the comp, the lead support, and the split structure before I ever picked up the phone. That transparency made the whole process feel completely different.</p>
+        <div class="testimonial-source">Branch Manager · Texas</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">We needed a producing Branch Manager who could actually build a team — not just someone with the title. Ledger &amp; Key understood the difference immediately.</p>
+        <div class="testimonial-source">Regional VP · Direct Lender</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paths">
+  <div class="wrap" style="padding-top: 96px; padding-bottom: 96px;">
+    <div class="section-head">
+      <div class="section-eyebrow">
+        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        Who We Work With
+      </div>
+      <h2>Two sides of the same deal.</h2>
+    </div>
+    <div class="path-grid">
+      <div class="path-card">
+        <h3>For Loan Officers &amp; Branch Managers</h3>
+        <p>You've built your production. We find the shop that can actually support it — with comp transparency, confidentiality, and no wasted interviews.</p>
+        <a href="loan-officers.html#apply" class="btn btn-primary">Submit Your Resume →</a>
+      </div>
+      <div class="path-card">
+        <h3>For Lenders &amp; Brokerages</h3>
+        <p>You need producers, not resumes. We pre-vet on volume, licensing, and fit — so your first conversation with a candidate is a decision, not a discovery call.</p>
+        <a href="employers.html" class="btn btn-secondary">Hire With Us →</a>
       </div>
     </div>
   </div>
