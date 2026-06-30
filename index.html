@@ -48,7 +48,6 @@
     padding: 0 32px;
   }
 
-  /* ---------- Key glyph (signature element) ---------- */
   .key-glyph {
     display: inline-block;
     width: 16px;
@@ -58,7 +57,6 @@
   }
   .key-glyph svg { width: 100%; height: 100%; display: block; }
 
-  /* ---------- Header ---------- */
   header {
     position: sticky;
     top: 0;
@@ -106,7 +104,6 @@
   .nav-cta:hover { background: var(--navy-soft); }
   .nav-toggle { display: none; }
 
-  /* ---------- Hero ---------- */
   .hero {
     position: relative;
     padding: 96px 32px 100px;
@@ -215,7 +212,6 @@
     color: var(--stone);
   }
 
-  /* ---------- Section shared ---------- */
   section { padding: 96px 0; }
   .section-head {
     max-width: 640px;
@@ -242,7 +238,6 @@
     margin-top: 16px;
   }
 
-  /* ---------- Roles strip ---------- */
   .roles {
     background: var(--white);
     border-top: 1px solid var(--line);
@@ -284,7 +279,6 @@
   }
   .role-link:hover { color: var(--navy); }
 
-  /* ---------- How it works ---------- */
   .how-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -310,7 +304,6 @@
     font-size: 15.5px;
   }
 
-  /* ---------- Why section ---------- */
   .why {
     background: var(--navy);
     color: var(--ivory);
@@ -345,7 +338,6 @@
     font-size: 15px;
   }
 
-  /* ---------- CTA band ---------- */
   .cta-band {
     background: var(--ivory-deep);
     border-top: 1px solid var(--line);
@@ -360,7 +352,6 @@
   .cta-band h2 { font-size: clamp(26px, 3vw, 34px); max-width: 460px; }
   .cta-band-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-  /* ---------- Footer ---------- */
   footer {
     background: var(--navy);
     color: rgba(247,242,233,0.6);
@@ -408,7 +399,6 @@
     gap: 12px;
   }
 
-  /* ---------- Mobile ---------- */
   @media (max-width: 860px) {
     .nav-links { display: none; }
     .hero { padding: 64px 24px 64px; }
@@ -416,223 +406,4 @@
     .hero-stats { grid-template-columns: 1fr; gap: 20px; }
     .how-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
-    .role-row { grid-template-columns: 1fr; gap: 10px; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .cta-band-inner { flex-direction: column; align-items: flex-start; }
-    section { padding: 64px 0; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { transition: none !important; }
-  }
-
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--brass);
-    outline-offset: 2px;
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <div class="nav">
-    <a href="index.html" class="logo">
-      <span class="key-glyph">
-        <svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#1B2A41" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#1B2A41" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </span>
-      Ledger &amp; Key
-    </a>
-    <nav class="nav-links">
-      <a href="loan-officers.html">For Loan Officers</a>
-      <a href="employers.html">For Employers</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="loan-officers.html#apply" class="nav-cta">Submit Resume</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">
-      <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-      Mortgage &amp; Real Estate Recruiting
-    </div>
-    <h1>Find the desk that matches<br>your <em>production</em>.</h1>
-    <p class="hero-sub">Ledger &amp; Key places loan officers, processors, underwriters, and agents with lending teams and brokerages built for growth — not just headcount.</p>
-    <div class="hero-actions">
-      <a href="loan-officers.html#apply" class="btn btn-primary">Submit Your Resume →</a>
-      <a href="#roles" class="btn btn-secondary">Browse Open Roles</a>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">200+</div>
-        <div class="stat-label">Originators placed</div>
-      </div>
-      <div>
-        <div class="stat-num">38</div>
-        <div class="stat-label">Lending &amp; brokerage partners</div>
-      </div>
-      <div>
-        <div class="stat-num">9 days</div>
-        <div class="stat-label">Average time to first offer</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="roles" id="roles">
-  <div class="wrap" style="padding-top: 56px; padding-bottom: 56px;">
-    <div class="section-head" style="margin-bottom: 36px;">
-      <div class="section-eyebrow">
-        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-        Open Opportunities
-      </div>
-      <h2>Roles we're actively filling</h2>
-    </div>
-
-    <div class="role-row">
-      <div class="role-title">Senior Loan Officer</div>
-      <div class="role-meta">South Florida · Retail branch</div>
-      <div class="role-tag">High volume</div>
-      <a href="loan-officers.html#apply" class="role-link">Apply →</a>
-    </div>
-    <div class="role-row">
-      <div class="role-title">Mortgage Loan Processor</div>
-      <div class="role-meta">Remote · Multi-state</div>
-      <div class="role-tag">Remote OK</div>
-      <a href="loan-officers.html#apply" class="role-link">Apply →</a>
-    </div>
-    <div class="role-row">
-      <div class="role-title">Real Estate Agent, Buyer's Team</div>
-      <div class="role-meta">South Florida · Team placement</div>
-      <div class="role-tag">Team lead track</div>
-      <a href="loan-officers.html#apply" class="role-link">Apply →</a>
-    </div>
-    <div class="role-row">
-      <div class="role-title">FHA / DE Underwriter</div>
-      <div class="role-meta">Remote · Direct lender</div>
-      <div class="role-tag">Remote OK</div>
-      <a href="loan-officers.html#apply" class="role-link">Apply →</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">
-        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-        How It Works
-      </div>
-      <h2>Three conversations, not three months.</h2>
-      <p>Most of our placements move from first call to signed offer faster than a typical lender's own hiring process.</p>
-    </div>
-
-    <div class="how-grid">
-      <div class="how-card">
-        <div class="how-mark"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#1B2A41" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#1B2A41" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <h3>Tell us your number</h3>
-        <p>Production history, license states, and what would actually get you to move desks. We don't waste your time on roles below your floor.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-mark"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#1B2A41" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#1B2A41" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <h3>We open the right doors</h3>
-        <p>Your information goes to a short list of lenders and brokerages actively hiring for your production level — not a mass blast to every employer in our database.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-mark"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#1B2A41" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#1B2A41" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <h3>You negotiate from strength</h3>
-        <p>We brief you on comp structure, splits, and lead programs at each shop before you ever take a call, so you walk in knowing what's actually on the table.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="why">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-eyebrow">Why Loan Officers Work With Us</div>
-      <h2>We know the difference between a desk and a deal.</h2>
-      <p>Built by people who understand origination, splits, and what actually moves a producer.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-item">
-        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#D6AC6A" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#D6AC6A" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <div>
-          <h4>No resume black holes</h4>
-          <p>Every submission gets reviewed by a person within 48 hours — not an applicant tracking system.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#D6AC6A" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#D6AC6A" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <div>
-          <h4>Comp transparency upfront</h4>
-          <p>You'll know base, splits, and lead support before the first interview, not after you've accepted.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#D6AC6A" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#D6AC6A" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <div>
-          <h4>Confidential by default</h4>
-          <p>Your current employer never hears from us. We don't shop your resume without your sign-off, role by role.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <span class="why-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#D6AC6A" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#D6AC6A" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <div>
-          <h4>Licensed across multiple states</h4>
-          <p>We place across state lines and understand NMLS transfer timing, so a move doesn't cost you production weeks.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-band">
-  <div class="wrap cta-band-inner">
-    <h2>Ready to see what's out there?</h2>
-    <div class="cta-band-actions">
-      <a href="loan-officers.html#apply" class="btn btn-primary">Submit Your Resume →</a>
-      <a href="contact.html" class="btn btn-secondary">Talk to a Recruiter</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">
-          <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#F7F2E9" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#F7F2E9" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-          Ledger &amp; Key
-        </div>
-        <p class="footer-desc">Mortgage and real estate recruiting for producers who want their next move to actually be a move up.</p>
-      </div>
-      <div class="footer-col">
-        <h5>For Candidates</h5>
-        <a href="loan-officers.html">Open Roles</a>
-        <a href="loan-officers.html#apply">Submit Resume</a>
-        <a href="about.html">Our Process</a>
-      </div>
-      <div class="footer-col">
-        <h5>For Employers</h5>
-        <a href="employers.html">Hire With Us</a>
-        <a href="contact.html">Request a Call</a>
-      </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Ledger &amp; Key. All rights reserved.</span>
-      <span>South Florida · Licensed nationwide placement</span>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+    .role-row {
