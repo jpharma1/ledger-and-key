@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Employers — Ledger &amp; Key</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #F7F2E9; --ivory-deep: #EFE7D8; --navy: #1B2A41; --navy-soft: #2C3E58;
+    --brass: #B8893E; --brass-light: #D6AC6A; --stone: #7A7568; --white: #FFFFFF;
+    --line: rgba(27,42,65,0.10);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--ivory); color: var(--navy); font-family: 'Inter', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: 'Source Serif 4', serif; font-weight: 600; letter-spacing: -0.01em; color: var(--navy); }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .key-glyph { display: inline-block; width: 16px; height: 16px; vertical-align: middle; flex-shrink: 0; }
+  .key-glyph svg { width: 100%; height: 100%; display: block; }
+
+  header { position: sticky; top: 0; z-index: 50; background: rgba(247,242,233,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 32px; max-width: 1180px; margin: 0 auto; }
+  .logo { font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 21px; display: flex; align-items: center; gap: 8px; }
+  .logo .key-glyph { width: 18px; height: 18px; }
+  .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; font-weight: 500; }
+  .nav-links a { color: var(--navy-soft); transition: color 0.2s; }
+  .nav-links a.active, .nav-links a:hover { color: var(--brass); }
+  .nav-cta { background: var(--navy); color: var(--ivory) !important; padding: 11px 22px; border-radius: 3px; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--navy-soft); }
+  @media (max-width: 860px) { .nav-links { display: none; } }
+
+  .page-hero { padding: 72px 32px 64px; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 47px, var(--line) 47px, var(--line) 48px); }
+  .page-hero-inner { max-width: 1180px; margin: 0 auto; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brass); background: var(--white); border: 1px solid var(--line); padding: 7px 14px; border-radius: 20px; margin-bottom: 24px; }
+  .page-hero h1 { font-size: clamp(34px, 4.4vw, 52px); line-height: 1.08; max-width: 760px; margin-bottom: 18px; }
+  .page-hero p { font-size: 18px; color: var(--navy-soft); max-width: 580px; margin-bottom: 36px; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 30px; border-radius: 3px; font-weight: 600; font-size: 15.5px; transition: all 0.2s; border: 1px solid transparent; }
+  .btn-primary { background: var(--navy); color: var(--ivory); }
+  .btn-primary:hover { background: var(--navy-soft); }
+  .btn-secondary { background: transparent; color: var(--navy); border-color: var(--navy); }
+  .btn-secondary:hover { background: var(--navy); color: var(--ivory); }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  section { padding: 80px 0; }
+  .section-head { max-width: 640px; margin-bottom: 48px; }
+  .section-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .section-head h2 { font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; }
+  .section-head p { color: var(--navy-soft); font-size: 16.5px; margin-top: 14px; }
+
+  .roles-served {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line);
+  }
+  .role-served-card { background: var(--white); padding: 28px 24px; }
+  .role-served-card h4 { font-family: 'Source Serif 4', serif; font-size: 17px; margin-bottom: 8px; }
+  .role-served-card p { font-size: 14px; color: var(--stone); }
+
+  .why { background: var(--navy); color: var(--ivory); }
+  .why .section-head h2, .why .section-head p { color: var(--ivory); }
+  .why .section-head p { color: rgba(247,242,233,0.7); }
+  .why .section-eyebrow { color: var(--brass-light); }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 40px; }
+  .why-item h4 { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+  .why-item p { color: rgba(247,242,233,0.65); font-size: 15px; }
+  .why-num { font-family: 'Source Serif 4', serif; font-size: 30px; color: var(--brass-light); margin-bottom: 14px; }
+
+  .cta-band { background: var(--ivory-deep); border-top: 1px solid var(--line); }
+  .cta-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .cta-band h2 { font-size: clamp(26px, 3vw, 34px); max-width: 460px; }
+
+  footer { background: var(--navy); color: rgba(247,242,233,0.6); padding: 64px 0 32px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(247,242,233,0.12); margin-bottom: 28px; }
+  .footer-logo { font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 19px; color: var(--ivory); display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .footer-desc { font-size: 14px; max-width: 280px; }
+  .footer-col h5 { color: var(--ivory); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 14.5px; margin-bottom: 11px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--brass-light); }
+  .footer-bottom { display: flex; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 12px; }
+
+  @media (max-width: 860px) {
+    .wrap, .nav { padding-left: 24px; padding-right: 24px; }
+    .page-hero { padding: 56px 24px 48px; }
+    .roles-served { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .cta-band-inner { flex-direction: column; align-items: flex-start; }
+    section { padding: 56px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">
+      <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#1B2A41" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#1B2A41" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      Ledger &amp; Key
+    </a>
+    <nav class="nav-links">
+      <a href="loan-officers.html">For Loan Officers</a>
+      <a href="employers.html" class="active">For Employers</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Request a Call</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">
+      <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      For Lenders &amp; Brokerages
+    </div>
+    <h1>Hire producers, not headcount.</h1>
+    <p>We bring you loan officers, processors, and agents who are already vetted on production, licensing, and fit — so your interviews are decisions, not discovery calls.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-primary">Request a Call →</a>
+      <a href="#roles" class="btn btn-secondary">Roles We Fill</a>
+    </div>
+  </div>
+</section>
+
+<section id="roles">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">
+        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        Roles We Fill
+      </div>
+      <h2>Across the loan lifecycle and the deal itself.</h2>
+    </div>
+    <div class="roles-served">
+      <div class="role-served-card"><h4>Loan Officers</h4><p>Retail, broker, and direct-to-consumer originators at every production tier.</p></div>
+      <div class="role-served-card"><h4>Processors</h4><p>Loan processors comfortable with high file volume and tight close timelines.</p></div>
+      <div class="role-served-card"><h4>Underwriters</h4><p>FHA/DE, conventional, and non-QM underwriters with active credentials.</p></div>
+      <div class="role-served-card"><h4>Real Estate Agents</h4><p>Buyer's agents, listing agents, and team leads for growing brokerages.</p></div>
+      <div class="role-served-card"><h4>Branch Managers</h4><p>Leaders who can recruit and retain their own production teams.</p></div>
+      <div class="role-served-card"><h4>Closers / Post-Closers</h4><p>Back-office talent to keep your pipeline moving without bottlenecks.</p></div>
+      <div class="role-served-card"><h4>Escrow &amp; Title</h4><p>Support staff who keep transactions compliant and on schedule.</p></div>
+      <div class="role-served-card"><h4>Sales Leadership</h4><p>Regional managers and VPs who can scale a producing team.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">How We Work</div>
+      <h2>Built around your hiring bar, not a database dump.</h2>
+      <p>We don't send volume. We send candidates who already match your comp structure and production expectations.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <h4>We learn your shop</h4>
+        <p>Comp plan, lead support, culture, and what "good" actually looks like at your company before we source a single candidate.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <h4>We pre-vet on production</h4>
+        <p>Every candidate we send has confirmed licensing, recent volume, and a real reason for wanting to make a move.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <h4>We stay through onboarding</h4>
+        <p>We check in through the first 90 days to catch friction early, not just hand off a resume and disappear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <h2>Tell us who you need, and we'll tell you who's available.</h2>
+    <a href="contact.html" class="btn btn-primary">Request a Call →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#F7F2E9" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#F7F2E9" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          Ledger &amp; Key
+        </div>
+        <p class="footer-desc">Mortgage and real estate recruiting for producers who want their next move to actually be a move up.</p>
+      </div>
+      <div class="footer-col">
+        <h5>For Candidates</h5>
+        <a href="loan-officers.html">Open Roles</a>
+        <a href="loan-officers.html#apply">Submit Resume</a>
+        <a href="about.html">Our Process</a>
+      </div>
+      <div class="footer-col">
+        <h5>For Employers</h5>
+        <a href="employers.html">Hire With Us</a>
+        <a href="contact.html">Request a Call</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledger &amp; Key. All rights reserved.</span>
+      <span>South Florida · Licensed nationwide placement</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

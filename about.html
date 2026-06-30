@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Ledger &amp; Key</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #F7F2E9; --ivory-deep: #EFE7D8; --navy: #1B2A41; --navy-soft: #2C3E58;
+    --brass: #B8893E; --brass-light: #D6AC6A; --stone: #7A7568; --white: #FFFFFF;
+    --line: rgba(27,42,65,0.10);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--ivory); color: var(--navy); font-family: 'Inter', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: 'Source Serif 4', serif; font-weight: 600; letter-spacing: -0.01em; color: var(--navy); }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .key-glyph { display: inline-block; width: 16px; height: 16px; vertical-align: middle; flex-shrink: 0; }
+  .key-glyph svg { width: 100%; height: 100%; display: block; }
+
+  header { position: sticky; top: 0; z-index: 50; background: rgba(247,242,233,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 32px; max-width: 1180px; margin: 0 auto; }
+  .logo { font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 21px; display: flex; align-items: center; gap: 8px; }
+  .logo .key-glyph { width: 18px; height: 18px; }
+  .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; font-weight: 500; }
+  .nav-links a { color: var(--navy-soft); transition: color 0.2s; }
+  .nav-links a.active, .nav-links a:hover { color: var(--brass); }
+  .nav-cta { background: var(--navy); color: var(--ivory) !important; padding: 11px 22px; border-radius: 3px; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--navy-soft); }
+  @media (max-width: 860px) { .nav-links { display: none; } }
+
+  .page-hero { padding: 72px 32px 64px; background: repeating-linear-gradient(to bottom, transparent 0px, transparent 47px, var(--line) 47px, var(--line) 48px); }
+  .page-hero-inner { max-width: 1180px; margin: 0 auto; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brass); background: var(--white); border: 1px solid var(--line); padding: 7px 14px; border-radius: 20px; margin-bottom: 24px; }
+  .page-hero h1 { font-size: clamp(34px, 4.4vw, 52px); line-height: 1.08; max-width: 760px; margin-bottom: 18px; }
+  .page-hero p { font-size: 18px; color: var(--navy-soft); max-width: 620px; }
+
+  section { padding: 80px 0; }
+  .section-head { max-width: 680px; margin-bottom: 48px; }
+  .section-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .section-head h2 { font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; }
+  .section-head p { color: var(--navy-soft); font-size: 16.5px; margin-top: 14px; }
+
+  .story p { font-size: 17px; color: var(--navy-soft); max-width: 720px; margin-bottom: 20px; }
+  .story p:last-child { margin-bottom: 0; }
+
+  .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .value-card { background: var(--white); padding: 36px 32px; }
+  .value-mark { width: 30px; height: 30px; margin-bottom: 20px; }
+  .value-card h3 { font-size: 19px; margin-bottom: 10px; }
+  .value-card p { font-size: 14.5px; color: var(--stone); }
+
+  .name-strip { background: var(--navy); color: var(--ivory); }
+  .name-strip .section-head h2, .name-strip .section-head p { color: var(--ivory); }
+  .name-strip .section-head p { color: rgba(247,242,233,0.7); }
+  .name-strip .section-eyebrow { color: var(--brass-light); }
+  .name-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .name-piece { display: flex; gap: 18px; }
+  .name-piece .key-glyph { width: 26px; height: 26px; margin-top: 4px; }
+  .name-piece h4 { font-family: 'Source Serif 4', serif; font-size: 19px; margin-bottom: 8px; }
+  .name-piece p { color: rgba(247,242,233,0.65); font-size: 14.5px; }
+
+  .cta-band { background: var(--ivory-deep); border-top: 1px solid var(--line); }
+  .cta-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .cta-band h2 { font-size: clamp(26px, 3vw, 34px); max-width: 460px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 30px; border-radius: 3px; font-weight: 600; font-size: 15.5px; transition: all 0.2s; border: 1px solid transparent; }
+  .btn-primary { background: var(--navy); color: var(--ivory); }
+  .btn-primary:hover { background: var(--navy-soft); }
+
+  footer { background: var(--navy); color: rgba(247,242,233,0.6); padding: 64px 0 32px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(247,242,233,0.12); margin-bottom: 28px; }
+  .footer-logo { font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 19px; color: var(--ivory); display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .footer-desc { font-size: 14px; max-width: 280px; }
+  .footer-col h5 { color: var(--ivory); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 14.5px; margin-bottom: 11px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--brass-light); }
+  .footer-bottom { display: flex; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 12px; }
+
+  @media (max-width: 860px) {
+    .wrap, .nav { padding-left: 24px; padding-right: 24px; }
+    .page-hero { padding: 56px 24px 48px; }
+    .values { grid-template-columns: 1fr; }
+    .name-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .cta-band-inner { flex-direction: column; align-items: flex-start; }
+    section { padding: 56px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">
+      <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#1B2A41" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#1B2A41" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      Ledger &amp; Key
+    </a>
+    <nav class="nav-links">
+      <a href="loan-officers.html">For Loan Officers</a>
+      <a href="employers.html">For Employers</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="loan-officers.html#apply" class="nav-cta">Submit Resume</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">
+      <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      About Ledger &amp; Key
+    </div>
+    <h1>Recruiting built around the deal, not the database.</h1>
+    <p>We started Ledger &amp; Key because too much mortgage and real estate recruiting treats producers like line items instead of people with a number that needs to make sense.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap story">
+    <div class="section-head">
+      <div class="section-eyebrow">
+        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        Our Story
+      </div>
+      <h2>Why we do this differently</h2>
+    </div>
+    <p>Mortgage and real estate are relationship businesses built on trust, timing, and numbers that actually add up. Most recruiting in this space doesn't reflect that — resumes get blasted to dozens of employers at once, comp conversations happen after an offer instead of before, and confidentiality is an afterthought.</p>
+    <p>Ledger &amp; Key exists to fix that sequence. We talk to producers first, understand what would genuinely move them, and only then go find the employers who can actually deliver it. No mass submissions, no surprises at the offer stage, and no contact with your current employer unless you explicitly want us to make it.</p>
+    <p>We work across South Florida and licensed nationwide, placing loan officers, processors, underwriters, and agents with lenders and brokerages that are hiring to grow — not just to fill a chair.</p>
+    <p>Ledger &amp; Key is founded and operated by Joe DiPerna.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">
+        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        How We Operate
+      </div>
+      <h2>What you can count on, every time.</h2>
+    </div>
+    <div class="values">
+      <div class="value-card">
+        <div class="value-mark"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#1B2A41" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#1B2A41" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Confidentiality first</h3>
+        <p>Your search stays private. We never contact a current employer or submit your information without sign-off, role by role.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-mark"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#1B2A41" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#1B2A41" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Numbers before narratives</h3>
+        <p>We lead with production, comp structure, and licensing — the facts that actually decide whether a move makes sense.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-mark"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#1B2A41" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#1B2A41" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>A real person, every time</h3>
+        <p>Every submission is reviewed by a recruiter, not a filter. You'll hear back from a human within 48 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="name-strip">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">The Name</div>
+      <h2>Ledger &amp; Key</h2>
+      <p>Two halves of the same business: the numbers that prove what you're worth, and the access that gets you in the door.</p>
+    </div>
+    <div class="name-grid">
+      <div class="name-piece">
+        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#D6AC6A" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#D6AC6A" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <div>
+          <h4>The Ledger</h4>
+          <p>Your production history and the financial reality of any move — the line items a good decision actually depends on.</p>
+        </div>
+      </div>
+      <div class="name-piece">
+        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#D6AC6A" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#D6AC6A" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <div>
+          <h4>The Key</h4>
+          <p>The relationships and access that get a strong producer in front of the right decision-maker, faster than a cold application ever could.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band-inner">
+    <h2>Ready to see what's out there?</h2>
+    <a href="loan-officers.html#apply" class="btn btn-primary">Submit Your Resume →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#F7F2E9" stroke-width="1.6"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#F7F2E9" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          Ledger &amp; Key
+        </div>
+        <p class="footer-desc">Mortgage and real estate recruiting for producers who want their next move to actually be a move up.</p>
+      </div>
+      <div class="footer-col">
+        <h5>For Candidates</h5>
+        <a href="loan-officers.html">Open Roles</a>
+        <a href="loan-officers.html#apply">Submit Resume</a>
+        <a href="about.html">Our Process</a>
+      </div>
+      <div class="footer-col">
+        <h5>For Employers</h5>
+        <a href="employers.html">Hire With Us</a>
+        <a href="contact.html">Request a Call</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ledger &amp; Key. All rights reserved.</span>
+      <span>South Florida · Licensed nationwide placement</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
