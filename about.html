@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Ledger &amp; Key</title>
+<meta name="description" content="Ledger & Key is founded and operated by Joe DiPerna. Mortgage recruiting built around the deal — confidential, numbers-first, no mass resume blasts.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About — Ledger & Key">
+<meta property="og:description" content="Mortgage recruiting built around the deal, not the database. Founded by Joe DiPerna.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — Ledger & Key">
+<meta name="twitter:description" content="Mortgage recruiting built around the deal, not the database. Founded by Joe DiPerna.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -44,8 +53,12 @@
   .section-head h2 { font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; }
   .section-head p { color: var(--navy-soft); font-size: 16.5px; margin-top: 14px; }
 
-  .story p { font-size: 17px; color: var(--navy-soft); max-width: 720px; margin-bottom: 20px; }
+  .story-grid { display: grid; grid-template-columns: 1fr 400px; gap: 72px; align-items: start; }
+  .story p { font-size: 17px; color: var(--navy-soft); margin-bottom: 20px; }
   .story p:last-child { margin-bottom: 0; }
+  .story-img { border-radius: 6px; overflow: hidden; position: sticky; top: 120px; }
+  .story-img img { width: 100%; height: 480px; object-fit: cover; display: block; }
+  @media (max-width: 860px) { .story-grid { grid-template-columns: 1fr; } .story-img { display: none; } }
 
   .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
   .value-card { background: var(--white); padding: 36px 32px; }
@@ -123,17 +136,24 @@
 
 <section>
   <div class="wrap story">
-    <div class="section-head">
-      <div class="section-eyebrow">
-        <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-        Our Story
+    <div class="story-grid">
+      <div>
+        <div class="section-head">
+          <div class="section-eyebrow">
+            <span class="key-glyph"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="4.2" stroke="#B8893E" stroke-width="1.8"/><path d="M10.8 12H21M17 12V15.5M21 12V15" stroke="#B8893E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            Our Story
+          </div>
+          <h2>Why we do this differently</h2>
+        </div>
+        <p>Mortgage and real estate are relationship businesses built on trust, timing, and numbers that actually add up. Most recruiting in this space doesn't reflect that — resumes get blasted to dozens of employers at once, comp conversations happen after an offer instead of before, and confidentiality is an afterthought.</p>
+        <p>Ledger &amp; Key exists to fix that sequence. We talk to producers first, understand what would genuinely move them, and only then go find the employers who can actually deliver it. No mass submissions, no surprises at the offer stage, and no contact with your current employer unless you explicitly want us to make it.</p>
+        <p>We work across South Florida and licensed nationwide, placing loan officers, branch managers, and processors with lenders and brokerages that are hiring to grow — not just to fill a chair.</p>
+        <p>Ledger &amp; Key is founded and operated by Joe DiPerna.</p>
       </div>
-      <h2>Why we do this differently</h2>
+      <div class="story-img">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="Professional conversation" loading="lazy">
+      </div>
     </div>
-    <p>Mortgage and real estate are relationship businesses built on trust, timing, and numbers that actually add up. Most recruiting in this space doesn't reflect that — resumes get blasted to dozens of employers at once, comp conversations happen after an offer instead of before, and confidentiality is an afterthought.</p>
-    <p>Ledger &amp; Key exists to fix that sequence. We talk to producers first, understand what would genuinely move them, and only then go find the employers who can actually deliver it. No mass submissions, no surprises at the offer stage, and no contact with your current employer unless you explicitly want us to make it.</p>
-    <p>We work across South Florida and licensed nationwide, placing loan officers, processors, underwriters, and agents with lenders and brokerages that are hiring to grow — not just to fill a chair.</p>
-    <p>Ledger &amp; Key is founded and operated by Joe DiPerna.</p>
   </div>
 </section>
 
